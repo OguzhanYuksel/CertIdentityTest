@@ -18,6 +18,9 @@ namespace CertIdentityTest
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var configRoot = (IConfigurationRoot)Configuration;
+            var str = configRoot.GetDebugView();
+            Console.Write(str);
         }
 
         public IConfiguration Configuration { get; }

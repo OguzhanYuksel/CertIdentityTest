@@ -22,12 +22,13 @@ namespace CertIdentityTest
 
             hostBuilder.ConfigureAppConfiguration((hostingcontext, config) =>
             {
+                //Docker
                 config.AddKeyPerFile(directoryPath: "/run/secrets", optional: false);
                 //"mysecret.txt","WARMACHINEROX"
 
-                //config.AddKeyPerFile(directoryPath: Path.Combine(Directory.GetCurrentDirectory(),"mysecret.txt"), optional: false);
-                //logger.LogWarning($"DIRECTORY => {Directory.GetCurrentDirectory()}");
-                //config.AddKeyPerFile(directoryPath: Directory.GetCurrentDirectory(), optional: false);
+                Console.Write($"DIRECTORY => {Directory.GetCurrentDirectory()}");
+                //VS'den çalýþtýrýrken
+                //config.AddKeyPerFile(directoryPath: Path.Combine(Directory.GetCurrentDirectory(),"mysecretfolder"), optional: false);
             }).Build().Run();
         }
 
