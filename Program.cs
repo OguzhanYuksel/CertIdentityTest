@@ -26,7 +26,7 @@ namespace CertIdentityTest
                 config.AddKeyPerFile(directoryPath: "/run/secrets", optional: false);
                 //"mysecret.txt","WARMACHINEROX"
 
-                Console.Write($"DIRECTORY => {Directory.GetCurrentDirectory()}");
+                Console.WriteLine($"DIRECTORY => {Directory.GetCurrentDirectory()}");
                 //VS'den çalýþtýrýrken
                 //config.AddKeyPerFile(directoryPath: Path.Combine(Directory.GetCurrentDirectory(),"mysecretfolder"), optional: false);
             }).Build().Run();
